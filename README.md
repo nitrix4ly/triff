@@ -5,7 +5,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/nitrix4ly/triff.svg)](https://pkg.go.dev/github.com/nitrix4ly/triff)
 [![License](https://img.shields.io/github/license/nitrix4ly/triff)](LICENSE)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/nitrix4ly/triff?logo=go)](go.mod)
-[![Build](https://img.shields.io/github/workflow/status/nitrix4ly/triff/CI?logo=github-actions)](https://github.com/nitrix4ly/triff/actions)
+
 
 **Lightweight in-memory key-value database engine written in Go**
 

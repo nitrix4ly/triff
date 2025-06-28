@@ -38,51 +38,51 @@ func main() {
 	// Set some values
 	response := stringCmd.Set("user:1:name", "John Doe", 0)
 	if response.Success {
-		fmt.Println("âœ“ Set user:1:name = John Doe")
+		fmt.Println("✓ Set user:1:name = John Doe")
 	}
 
 	response = stringCmd.Set("user:1:age", "25", 0)
 	if response.Success {
-		fmt.Println("âœ“ Set user:1:age = 25")
+		fmt.Println("✓ Set user:1:age = 25")
 	}
 
 	// Set with TTL (expires in 60 seconds)
 	response = stringCmd.Set("session:abc123", "active", 60)
 	if response.Success {
-		fmt.Println("âœ“ Set session:abc123 = active (expires in 60s)")
+		fmt.Println("✓ Set session:abc123 = active (expires in 60s)")
 	}
 
 	// Get values
 	response = stringCmd.Get("user:1:name")
 	if response.Success {
-		fmt.Printf("âœ“ Get user:1:name = %s\n", response.Data)
+		fmt.Printf("✓ Get user:1:name = %s\n", response.Data)
 	}
 
 	response = stringCmd.Get("user:1:age")
 	if response.Success {
-		fmt.Printf("âœ“ Get user:1:age = %s\n", response.Data)
+		fmt.Printf("✓ Get user:1:age = %s\n", response.Data)
 	}
 
 	// Increment operations
 	response = stringCmd.Incr("counter")
 	if response.Success {
-		fmt.Printf("âœ“ Increment counter = %d\n", response.Data)
+		fmt.Printf("✓ Increment counter = %d\n", response.Data)
 	}
 
 	response = stringCmd.Incr("counter")
 	if response.Success {
-		fmt.Printf("âœ“ Increment counter = %d\n", response.Data)
+		fmt.Printf("✓ Increment counter = %d\n", response.Data)
 	}
 
 	// String operations
 	response = stringCmd.Append("user:1:name", " Smith")
 	if response.Success {
-		fmt.Printf("âœ“ Append to user:1:name, new length = %d\n", response.Data)
+		fmt.Printf("✓ Append to user:1:name, new length = %d\n", response.Data)
 	}
 
 	response = stringCmd.Get("user:1:name")
 	if response.Success {
-		fmt.Printf("âœ“ Get user:1:name = %s\n", response.Data)
+		fmt.Printf("✓ Get user:1:name = %s\n", response.Data)
 	}
 
 	// Multiple operations
@@ -94,7 +94,7 @@ func main() {
 
 	response = stringCmd.MSet(keyValues)
 	if response.Success {
-		fmt.Println("âœ“ Set multiple config values")
+		fmt.Println("✓ Set multiple config values")
 	}
 
 	// Get multiple values
@@ -103,13 +103,13 @@ func main() {
 	if response.Success {
 		values := response.Data.([]interface{})
 		for i, key := range keys {
-			fmt.Printf("âœ“ %s = %v\n", key, values[i])
+			fmt.Printf("✓ %s = %v\n", key, values[i])
 		}
 	}
 
 	// Database operations
-	fmt.Printf("âœ“ Database size: %d keys\n", db.Size())
-	fmt.Printf("âœ“ Database info: %v\n", db.Info())
+	fmt.Printf("✓ Database size: %d keys\n", db.Size())
+	fmt.Printf("✓ Database info: %v\n", db.Info())
 
 	// Check if we want to start servers
 	fmt.Println("\n=== Starting Servers ===")
@@ -122,7 +122,7 @@ func main() {
 				log.Printf("TCP server error: %v", err)
 			}
 		}()
-		fmt.Printf("âœ“ TCP server started on port %d\n", config.Port)
+		fmt.Printf("✓ TCP server started on port %d\n", config.Port)
 	}
 
 	// Start HTTP server in a goroutine
@@ -133,11 +133,11 @@ func main() {
 				log.Printf("HTTP server error: %v", err)
 			}
 		}()
-		fmt.Printf("âœ“ HTTP server started on port %d\n", config.HTTPPort)
+		fmt.Printf("✓ HTTP server started on port %d\n", config.HTTPPort)
 	}
 
 	// Keep the program running
-	fmt.Println("\nâœ“ Triff database is running!")
+	fmt.Println("\n✓ Triff database is running!")
 	fmt.Println("Press Ctrl+C to stop...")
 	
 	// Cleanup expired keys every 10 seconds

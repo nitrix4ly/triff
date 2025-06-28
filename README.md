@@ -1,7 +1,6 @@
 # Triff
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/nitrix4ly/triff.svg)](https://pkg.go.dev/github.com/nitrix4ly/triff)
-[![Build Status](https://github.com/nitrix4ly/triff/actions/workflows/go.yml/badge.svg)](https://github.com/nitrix4ly/triff/actions)
 [![License](https://img.shields.io/github/license/nitrix4ly/triff)](LICENSE)
 
 Triff is a lightweight in-memory key-value database engine written in Go. It provides support for multiple data types including strings, sets, hashes, and lists, along with optional persistence using a disk-based engine. Triff is modular, testable, and designed to be extensible and educational.

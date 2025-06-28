@@ -1,5 +1,3 @@
-# Triff
-
 <div align="center">
 
 ![Triff](https://img.shields.io/badge/Triff-Database%20Engine-blue?style=for-the-badge&logo=database)

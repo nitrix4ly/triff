@@ -143,8 +143,6 @@ go build ./...
 ## Documentation
 
 - [API Reference](https://pkg.go.dev/github.com/nitrix4ly/triff)
-- [Command Reference](docs/commands.md)
-- [Configuration Guide](docs/configuration.md)
 
 ## License
 
